@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Routes from './Routes'
 import { Provider } from 'react-redux'
-import store from './store'
+import store, { history } from './store'
+import { ConnectedRouter } from 'connected-react-router'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,7 +11,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Routes />
+      <ConnectedRouter history={history}>
+        <Routes />
+      </ConnectedRouter>
     </Provider>
   </React.StrictMode>
 )
