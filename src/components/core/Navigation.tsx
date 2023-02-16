@@ -10,13 +10,19 @@ const items: MenuProps['items'] = [
   {
     label: '首页',
     key: '/',
-    icon: <MailOutlined />,
   },
   {
     label: '商城',
     key: '/shop',
-    icon: <AppstoreOutlined />,
-  }
+  },
+  {
+    label: '登录',
+    key: '/signin',
+  },
+  {
+    label: '注册',
+    key: '/signup',
+  },
 ]
 
 const Navigation: React.FC = () => {
