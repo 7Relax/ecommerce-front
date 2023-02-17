@@ -1,5 +1,7 @@
 // 初始化路由
 import { HashRouter, Route, Routes } from "react-router-dom"
+import Dashboard from "./components/admin/Dashboard"
+import PrivateRoute from "./components/admin/PrivateRoute"
 import Home from "./components/core/Home"
 import Shop from "./components/core/Shop"
 import Signin from "./components/core/Signin"
@@ -16,6 +18,8 @@ const R = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+        {/* @ts-ignore */}
+        {/* <PrivateRoute path="/user/dashboard" element={<Dashboard />} /> */}
       </Routes>
     </HashRouter>
   )
