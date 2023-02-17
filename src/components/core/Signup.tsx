@@ -30,6 +30,7 @@ const Signup = () => {
       form.resetFields()
     }
   }, [auth, form])
+
   // 2. 注册成功 显示成功的提示信息
   const showSuccess = () => {
     if (auth.signup.loaded && auth.signup.success) {
@@ -44,6 +45,7 @@ const Signup = () => {
       )
     }
   }
+
   // 3. 注册失败 显示失败的提示信息
   const showError = () => {
     if (auth.signup.loaded && !auth.signup.success) {
@@ -56,6 +58,7 @@ const Signup = () => {
       )
     }
   }
+
   // 4. 离开页面之前 重置状态
   useEffect(() => {
     return () => {
