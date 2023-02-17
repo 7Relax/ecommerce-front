@@ -8,14 +8,16 @@ import { useEffect } from "react"
 import { Link } from "react-router-dom"
 
 const Signup = () => {
+
   // 获取 dispatch 方法
   const dispatch = useDispatch()
+
   // 注册表单提交
-  const onFinish = (values: SignupPayload) => {
-    console.log('Success:', values)
+  const onFinish = (value: SignupPayload) => {
     // 发送注册请求
-    dispatch(signup(values))
+    dispatch(signup(value))
   }
+
   // 获取注册结果
   const auth = useSelector<AppState, AuthState>(state => state.auth)
 
