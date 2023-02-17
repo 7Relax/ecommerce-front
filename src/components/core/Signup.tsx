@@ -1,6 +1,6 @@
 import Layout from "./Layout"
 import { Button, Form, Input, Result } from 'antd'
-import { signup, SignupPayload } from "../../store/actions/auth.actions"
+import { resetSignup, signup, SignupPayload } from "../../store/actions/auth.actions"
 import { useDispatch, useSelector } from "react-redux"
 import { AppState } from "../../store/reducers"
 import { AuthState } from "../../store/reducers/auth.reducer"
@@ -57,8 +57,9 @@ const Signup = () => {
   // 4. 离开页面之前 重置状态
   useEffect(() => {
     return () => {
+      dispatch(resetSignup())
     }
-  }, [auth])
+  }, [])
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);

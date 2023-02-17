@@ -1,4 +1,4 @@
-import { AuthUnionType, SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL }
+import { AuthUnionType, SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL, RESET_SIGNUP }
   from "../actions/auth.actions"
 
 export interface AuthState {
@@ -42,6 +42,15 @@ export default function authReducer(state = intialState, action: AuthUnionType) 
           loaded: true,
           success: false,
           message: action.message
+        }
+      }
+    case RESET_SIGNUP:
+      return {
+        ...state,
+        signup: {
+          loaded: false,
+          success: false,
+          message: ''
         }
       }
     default: return state
