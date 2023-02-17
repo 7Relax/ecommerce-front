@@ -4,14 +4,16 @@ import { AuthUnionType, SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL }
 export interface AuthState {
   signup: {
     loaded: boolean,
-    success: boolean
+    success: boolean,
+    message: string
   }
 }
 
 const intialState: AuthState = {
   signup: {
     loaded: false,
-    success: false
+    success: false,
+    message: ''
   }
 }
 
@@ -42,5 +44,6 @@ export default function authReducer(state = intialState, action: AuthUnionType) 
           message: action.message
         }
       }
+    default: return state
   }
 }

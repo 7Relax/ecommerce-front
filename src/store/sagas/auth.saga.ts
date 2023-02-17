@@ -10,12 +10,11 @@ function * hanleSignup(action: SignupAction) {
     yield put(signupSuccess())
   } catch (error) {
     // 请求失败
-    yield put(signupFail('请求失败'))
+    // @ts-ignore
+    yield put(signupFail(error.response.data.error))
   }
 }
 
 export default function * authSaga() {
   yield takeEvery(SIGNUP, hanleSignup)
 }
-
-

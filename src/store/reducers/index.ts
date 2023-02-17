@@ -10,7 +10,7 @@ export interface AppState {
 
 const createRootReducer = (history: History) => combineReducers({
   router: connectRouter(history),
-  // auth: authReducer // 这里会报错-所以先注掉
+  auth: authReducer // 注意：reducer 函数的返回必须要有默认值，不可以是 undefined
 })
 
 export default createRootReducer
